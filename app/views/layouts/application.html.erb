@@ -5,12 +5,274 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> 
+<body> 
 
-<%= yield %>
+<div class="row sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <div class="large-2 columns">
+      <ul class="title-area">
+        <li class="name">
+			    <h1><a href="#"><%= image_tag('logo.png') %></a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+    </div>
+
+    <div class="large-10 columns">
+        <section class="top-bar-section">
+          <div class="row valign-middle">
+
+            <div class="large-6 columns">
+              <!-- Left Nav Section -->
+              <ul class="left">
+                <li><a href="#" class="">HOME</a></li>
+                <li><a href="#" class="">BRANCHES</a></li>
+                <li><a href="#" class="">GEMS</a></li>
+              </ul>
+            </div>
+
+            <div class="large-6 columns content">
+              <!-- Right Nav Section -->
+              <div class="right">
+                <div class="row collapse">
+                  <div class="small-10 columns">
+                    <input type="text" placeholder="Search by keyword, topic or branch location">
+                  </div>
+                  <div class="small-2 columns">
+                    <a href="#" class="button postfix"><%= image_tag('searchicon.png', class: "margin65b") %></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </section>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+
+<div class="row">
+  <div class="large-2 columns sidebarmaincontent">
+    <ul class="side-nav">
+      <li class="socialnav"><a href="#" class="usernav">
+        <div class="row valign-middle">
+          <div class="large-4 columns text-left">
+            <%= image_tag('defaultpropic.png') %>
+          </div>
+          <div class="large-9 columns text-left">
+            <p class="margin0b lineheight12"><span class="font08">Callum Short</span><br><span class="font07">Kabin Devon</span></p>
+          </div>
+        </div>
+        </a></li>
+      <li class="socialnav">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('messagesicon.png') %>
+            </div>
+            <div class="large-8 columns">
+              <span class="">Messages</span>
+            </div>
+            <div class="large-1 columns text-right grey">
+              3
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="socialnav">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('notificationicon.png') %>
+            </div>
+            <div class="large-8 columns">
+              <span class="">Notifications</span>
+            </div>
+            <div class="large-1 columns text-right grey">
+              12
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="socialnav">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('plusicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="">More</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="sidecat">
+        <div class="row">
+          <div class="large-12 columns content">
+            <span class="font1">HQ</span>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('portalicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Portal</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('supporticon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Support</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="sidecat">
+        <div class="row">
+          <div class="large-12 columns content">
+            <span class="font1">Discuss</span>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('feedicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Feed</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('forumicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Forum</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="sidecat">
+        <div class="row">
+          <div class="large-12 columns content">
+            <span class="font1">Learn</span>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('knowledgebaseicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Knowledge Base</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('guidesicon.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="font07">Guides</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="sidecat">
+          <div class="row">
+            <div class="large-12 columns content">
+              <span class="font1">Gems</span>
+            </div>
+          </div>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('printden.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="">Print Den</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="">
+        <a href="#">
+          <div class="row">
+            <div class="large-3 columns content">
+              <%= image_tag('mossmail.png') %>
+            </div>
+            <div class="large-9 columns">
+              <span class="">Moss Mail</span>
+            </div>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="large-10 columns sidebarmaincontent">
+
+  	<%= yield %>
+
+  </div>
+
+  <div class="row grey3bg">
+    <div class="large-12 columns">
+      <br><br><br><br>
+    </div>
+  </div>
+
+  </div>
+
+
+	<script type="text/javascript">
+	  (function() {
+
+	      $(function() {
+
+	        $(function() {
+	          $('.sidebarmaincontent').matchHeight();
+	        });
+
+	        
+	      });
+
+	  })();
+	</script>
+	<script>
+	  $(document).foundation();
+	</script>
 
 </body>
 </html>

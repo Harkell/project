@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require foundation.js
+//= require foundation.topbar.js
+//= require foundation.offcanvas.js
+//= require jquery.matchHeight.js
 //= require_tree .
