@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :users_only, only: [:index]
+  layout "layouts/internal"
 
   def index
 

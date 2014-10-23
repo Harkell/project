@@ -1,11 +1,13 @@
 class UpdatesController < ApplicationController
 	before_action :update_params, only: [:create]
   before_action :users_only, only: [:index, :show, :new, :edit, :create]
+  before_action :set_update, only: []
 
   def index
   	@updates = Update.all
   end
   def show
+
   end
 
   def new
@@ -29,6 +31,10 @@ class UpdatesController < ApplicationController
     end
   end
 
+  def destroy
+
+  end
+
   private
 
   def update_params
@@ -39,6 +45,10 @@ class UpdatesController < ApplicationController
     unless current_user
       redirect_to user_session_path, notice: "Please log in."
     end
+  end
+
+  def set_update
+    @update = Update.find(params[:id])
   end
 
 end

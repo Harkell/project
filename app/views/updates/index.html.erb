@@ -1,7 +1,7 @@
 <h1>Updates#index</h1>
 <p>Find me in app/views/updates/index.html.erb</p>
 <%= @updates.each do |update| %>
-	<%= update.title %>
+	<%= link_to update.title, update_path(update) %>
 	<%= update.user.email %>
 
 <% end %>

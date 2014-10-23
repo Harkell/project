@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-      <%= yield %>
-  <% else %>
-      <h1>Not Logged In.</h1>
-      <%#= redirect_to new_user_session_path, notice: "Please log in." %>
-<% end %>
