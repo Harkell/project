@@ -157,11 +157,13 @@
   padding: 0 1rem;
 }
 
-
-
 .padding3t1b{
   padding-top: 3em;
   padding-bottom: 1em;
+}
+
+.sidehoverbutton:hover  .sidehovertext{
+  margin-left: 1rem;
 }
 
 

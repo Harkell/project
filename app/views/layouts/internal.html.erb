@@ -39,7 +39,7 @@
               <div class="right">
                 <div class="row collapse">
                   <div class="small-10 columns">
-                    <input type="text" placeholder="Search by keyword, topic or branch location">
+                    <input type="text" placeholder="Search by keyword, topic or branch location" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search by keyword, topic or branch location'">
                   </div>
                   <div class="small-2 columns">
                     <a href="#" class="button postfix"><%= image_tag('searchicon.png', class: "margin65b") %></a>
@@ -101,14 +101,52 @@
           </div>
         </a>
       </li>
-      <li class="socialnav">
+      <div id="sidedropdown">
+        <li class="socialnav">
+          <a href="#">
+            <div class="row">
+              <div class="large-3 columns content">
+                <%= image_tag('plusicon.png') %>
+              </div>
+              <div class="large-9 columns">
+                <span class="">My Profile</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="socialnav">
+          <a href="#">
+            <div class="row">
+              <div class="large-3 columns content">
+                <%= image_tag('plusicon.png') %>
+              </div>
+              <div class="large-9 columns">
+                <span class="">Edit Account</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="socialnav">
+          <a href="#">
+            <div class="row">
+              <div class="large-3 columns content">
+                <%= image_tag('plusicon.png') %>
+              </div>
+              <div class="large-9 columns">
+                <span class="">Logout</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </div>
+      <li class="socialnav" id="more">
         <a href="#">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('plusicon.png') %>
             </div>
             <div class="large-9 columns">
-              <span class="">More</span>
+              <span class="" id="moretext">More</span>
             </div>
           </div>
         </a>
@@ -120,14 +158,14 @@
           </div>
         </div>
       </li>
-      <li class="">
+      <li class="sidehoverbutton">
         <a href="#">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('portalicon.png') %>
             </div>
             <div class="large-9 columns">
-              <span class="font07">Portal</span>
+              <span class="font07 sidehovertext">Portal</span>
             </div>
           </div>
         </a>
@@ -255,7 +293,21 @@
 
   </div>
 
+  <script>
 
+  $("#sidedropdown").hide();
+  $("#more").click( function(){
+    if($("#sidedropdown").is(':visible')){
+      $("#sidedropdown").hide("500");
+      $("#moretext").text("More");
+    }
+    else{ 
+      $("#sidedropdown").show("500");
+      $("#moretext").text("Less");
+       }
+  });
+
+  </script>
   <script type="text/javascript">
     (function() {
 
