@@ -1,6 +1,6 @@
-class CreateUpdates < ActiveRecord::Migration
+class CreateNewsposts < ActiveRecord::Migration
   def change
-    create_table :updates do |t|
+    create_table :newsposts do |t|
       t.string :title
       t.text :content
       t.references :user, index: true

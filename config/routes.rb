@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
+ 
+
   #get 'updates/show'
 
   #get 'updates/new'
 
   #get 'updates/edit'
-  resources :updates
+  resources :newsposts
+
+
+  #resources :updates
 
   get 'home/index'
 
-  devise_for :users
+  devise_for :users #, :path_prefix => 'd' #or devise - this prefix would seperate devise users from resources users
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

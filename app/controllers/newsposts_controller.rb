@@ -1,27 +1,27 @@
-class UpdatesController < ApplicationController
-	before_action :update_params, only: [:create]
+class NewspostsController < ApplicationController
+	before_action :newspost_params, only: [:create]
   before_action :users_only, only: [:index, :show, :new, :edit, :create]
-  before_action :set_update, only: []
+  before_action :set_newspost, only: []
 
   def index
-  	@updates = Update.all
+  	@newsposts = Newspost.all
   end
   def show
 
   end
 
   def new
-  	@newUpdate = Update.new
+  	@newNewspost = Newspost.new
   end
 
   def edit
   end
 
   def create
-  	@newUpdate = Update.create(update_params)
-  	@newUpdate.user_id = current_user.id
+  	@newNewspost = Newspost.create(newspost_params)
+  	@newNewspost.user_id = current_user.id
   	respond_to do |format|
-    	if @newUpdate.save
+    	if @newNewspost.save
         	format.html { redirect_to root_path, notice: 'Post was successfully created.' }
         	format.json {  }
     	else
@@ -37,8 +37,8 @@ class UpdatesController < ApplicationController
 
   private
 
-  def update_params
-  	params.require(:update).permit(:title, :content, :user_id)
+  def newspost_params
+  	params.require(:newspost).permit(:title, :content, :user_id)
   end
 
   def users_only
@@ -47,8 +47,8 @@ class UpdatesController < ApplicationController
     end
   end
 
-  def set_update
-    @update = Update.find(params[:id])
+  def set_newspost
+    @newspost = Newspost.find(params[:id])
   end
 
 end

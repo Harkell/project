@@ -1,0 +1,16 @@
+<h1>Users#update</h1>
+<p>Find me in app/views/users/update.html.erb</p>
+<%= @user.forename %>
+<%= @user.surname %>
+<%= @user.email %>
+<%= @user.approved ? 'Approved' : 'Awaiting approval' %>
+
+<% if @user.approved == false %>
+	<%= form_for(@user) do |f| %>
+		<%= f.hidden_field :approved, :value => true %> <!-- This line does nothing, it just calls the approve user method in the users controller -->
+		<%= f.submit 'Approve' %>
+	<% end %>
+<% end %>
+
+Delete this account
+<%= button_to "Delete Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete %>

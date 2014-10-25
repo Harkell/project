@@ -1,0 +1,7 @@
+<h1>Updates#index</h1>
+<p>Find me in app/views/updates/index.html.erb</p>
+<%= @newsposts.each do |newspost| %>
+	<%= link_to newspost.title, newspost_path(newspost) %>
+	<%= newspost.user.forename %>
+
+<% end %>

@@ -1,4 +1,4 @@
-class Update < ActiveRecord::Base
+class Newspost < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :title, :content, :user_id
 
