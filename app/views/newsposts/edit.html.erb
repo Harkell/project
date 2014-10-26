@@ -1,2 +1,8 @@
 <h1>Updates#edit</h1>
 <p>Find me in app/views/updates/edit.html.erb</p>
+	<%= form_for (@newspost) do |f| %>
+		<%#= f.hidden_field :approved, :value => true %> <!-- This line does nothing, it just calls the approve user method in the users controller -->
+		<%= f.text_field :title %>
+		<%= f.text_field :content %>
+		<%= f.submit %>
+	<% end %>

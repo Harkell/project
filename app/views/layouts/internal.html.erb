@@ -30,7 +30,7 @@
               <ul class="left">
                 <li><a href="<%= root_path %>" class="">HOME</a></li>
                 <li><a href="#" class="">BRANCHES</a></li>
-                <li><a href="#" class=""><%= link_to 'GEMS', destroy_user_session_path, :method => :delete %></a></li>
+                <li><a href="#" class="">GEMS</a></li>
               </ul>
             </div>
 
@@ -115,7 +115,7 @@
           </a>
         </li>
         <li class="socialnav">
-          <a href="#">
+          <%= link_to edit_user_registration_path do %>
             <div class="row">
               <div class="large-3 columns content">
                 <%= image_tag('plusicon.png') %>
@@ -124,10 +124,10 @@
                 <span class="">Edit Account</span>
               </div>
             </div>
-          </a>
+          <% end %>
         </li>
         <li class="socialnav">
-          <a href="#">
+          <%= link_to destroy_user_session_path, :method => :delete do %>
             <div class="row">
               <div class="large-3 columns content">
                 <%= image_tag('plusicon.png') %>
@@ -136,7 +136,7 @@
                 <span class="">Logout</span>
               </div>
             </div>
-          </a>
+          <% end %>
         </li>
       </div>
       <li class="socialnav" id="more">

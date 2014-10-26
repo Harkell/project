@@ -6,11 +6,23 @@
 <%= @user.approved ? 'Approved' : 'Awaiting approval' %>
 
 <% if @user.approved == false %>
-	<%= form_for(@user) do |f| %>
-		<%= f.hidden_field :approved, :value => true %> <!-- This line does nothing, it just calls the approve user method in the users controller -->
-		<%= f.submit 'Approve' %>
+	<%= form_for (@user) do |f| %>
+		<%= f.hidden_field :approved, :value => true %>
+		<%= f.submit "Approve" %>
 	<% end %>
 <% end %>
+<% if @user.admin == false %>
+	<%= form_for (@user) do |f| %>
+		<%= f.hidden_field :admin, :value => true %>
+		<%= f.submit "Promote to admin" %>
+	<% end %>
+<% else %>
+	<%= form_for @user, :url => { :action => "update" } do |f| %>
+		<%= f.hidden_field :admin, :value => false %>
+		<%= f.submit "Demote admin" %>
+	<% end %>
+<% end %>
+
 
 Delete this account
 <%= button_to "Delete Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete %>

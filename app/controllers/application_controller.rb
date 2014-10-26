@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
 	before_filter :update_sanitized_params, if: :devise_controller?
 
     	def update_sanitized_params # Allows for additional forename and surname attributes to be passed in through the sign up form
-       		devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:forename, :surname, :email,	:password, :password_confirmation)} 
+       		devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:forename, :surname, :email,	:password, :password_confirmation)}
     	end
-    
 
 end

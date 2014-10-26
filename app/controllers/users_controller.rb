@@ -1,40 +1,43 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:edit, :destroy, :update]
-	before_action :user_params, only: [:update]
-	before_action :approve_user, only: [:update]
-	before_action :admin_only, only: [:index, :edit, :update, :destroy]
-	layout "layouts/internal"
+  before_action :admin_only, only: [:index, :edit, :update, :destroy] # Makes sure only admins can view these pages
+	before_action :set_user, only: [:show, :edit, :destroy, :update] # Sets user ID
+	before_action :user_params, only: [:update] # Sets permitted params
+  layout "layouts/internal"
 
   def index
   	if params[:approved] == "false"
       @users = User.where(:approved => false)
     else
-      @users = User.all
+      @users = User.where(:approved => true)
     end
+  end
+
+  def show
+
   end
 
   def edit
 
   end
-
   def update
-  	if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
-    params[:user].delete(:password)
-    params[:user].delete(:password_confirmation)
-end
-  	respond_to do |format|
-        format.html { redirect_to users_path, notice: 'Post was successfully created.' }
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to users_path, notice: 'The user was successfully updated.' }
         format.json {  }
+      else
+        format.html { redirect_to users_path, notice: 'Error updating user.' }
+        format.json {  }
+      end
     end
   end
 
   def destroy
   	respond_to do |format|
     	if @user.destroy
-        	format.html { redirect_to root_path, notice: 'Post was successfully created.' }
+        	format.html { redirect_to root_path, notice: 'User successfully deleted.' }
         	format.json {  }
     	else
-        	format.html { redirect_to root_path, notice: 'Post was not successfully created.'  }
+        	format.html { redirect_to root_path, notice: 'Error deleting user.'  }
         	format.json {  }
     	end
     end
@@ -46,13 +49,11 @@ end
     @user = User.find(params[:id])
   end
   def user_params
-  	params.require(:user).permit(:approved)
+  	params.require(:user).permit(:approved, :admin)
   end
-  def approve_user
-  	@approve = @user.update(:approved => true)
-  end
+
   def admin_only
-  	if current_user.email == "jordan@devonite.co.uk"
+  	if current_user.admin != true
   		redirect_to root_path
   	end
   end

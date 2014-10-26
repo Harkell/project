@@ -1,7 +1,7 @@
 class NewspostsController < ApplicationController
 	before_action :newspost_params, only: [:create]
   before_action :users_only, only: [:index, :show, :new, :edit, :create]
-  before_action :set_newspost, only: []
+  before_action :set_newspost, only: [:edit, :update]
 
   def index
   	@newsposts = Newspost.all
@@ -15,6 +15,17 @@ class NewspostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @newspost.update(newspost_params)
+        format.html { redirect_to newsposts_path, notice: 'Post was successfully created.' }
+        format.json {  }
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   def create

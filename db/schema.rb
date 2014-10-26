@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025124416) do
+ActiveRecord::Schema.define(version: 20141026210333) do
 
   create_table "newsposts", force: true do |t|
     t.string   "title"
@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 20141025124416) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "approved",               default: false, null: false
+    t.boolean  "admin",                  default: false, null: false
   end
 
+  add_index "users", ["admin"], name: "index_users_on_admin"
   add_index "users", ["approved"], name: "index_users_on_approved"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
