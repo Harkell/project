@@ -1,15 +1,27 @@
+<div class="row content1">
+	<div class="row">
+		<div class="large-6 columns">
+			</p><%= link_to "Approved users", :action => "index", :approved => "true" %></p>
+		</div>
+		<div class="large-6 columns">
+			</p><%= link_to "Users awaiting approval", :action => "index", :approved => "false" %></p>
+		</div>
+	</div>
 
-<h1> Users </h1>
-
-<%= link_to "Approved users", :action => "index", :approved => "true" %>
-
-<%= link_to "Users awaiting approval", :action => "index", :approved => "false" %>
-
-<table>
-    <% @users.each do |user| %>
-        <tr>
-            <td><%= user.email %>
-            <td><%= user.approved ? 'Approved' : 'Awaiting approval' %>
-            <td><%= link_to "Edit", edit_user_path(user) %>
-    <% end %>
-
+	<div class="row panel">
+	  <% @users.each do |user| %>
+					<div class="row whitebg br3t br3b">
+						<div class="large-10 columns text-left content padding04v">
+		          <p class="lineheight0 margin0b"><%= user.email %>
+		          	<%= link_to "Edit", edit_user_path(user) %>
+		          </p>
+		        </div>
+		        <div class="large-2 columns text-right">
+		          <p class="lineheight0 margin0b approvedbutton">
+		          	<%= user.approved ? 'Approved' : 'Awaiting approval'%>
+		          </p>
+		        </div>
+				  </div>
+	    <% end %>
+	  </div>
+</div>
