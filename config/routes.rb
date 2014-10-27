@@ -2,6 +2,8 @@ Rails.application.routes.draw do
  
 
 
+  get 'support/index'
+
   get 'updates/index'
 
   get 'updates/new'

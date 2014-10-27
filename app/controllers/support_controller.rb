@@ -1,4 +1,4 @@
-class PortalController < ApplicationController
+class SupportController < ApplicationController
 	layout "layouts/internal"
   def index
   end
