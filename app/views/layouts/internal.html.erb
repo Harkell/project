@@ -9,9 +9,8 @@
 </head>
 <body> 
   
-<div class="row sticky">
+<div class="sticky">
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <div class="large-2 columns">
       <ul class="title-area">
         <li class="name">
           <h1><a href="#"><%= image_tag('logo.png') %></a></h1>
@@ -19,24 +18,17 @@
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-    </div>
-
-    <div class="large-10 columns">
         <section class="top-bar-section">
-          <div class="row valign-middle">
 
-            <div class="large-6 columns">
               <!-- Left Nav Section -->
               <ul class="left">
                 <li><a href="<%= root_path %>" class="">HOME</a></li>
                 <li><a href="#" class="">BRANCHES</a></li>
                 <li><a href="#" class="">GEMS</a></li>
               </ul>
-            </div>
 
-            <div class="large-6 columns content">
               <!-- Right Nav Section -->
-              <div class="right">
+              <div class="right searchpadding">
                 <div class="row collapse">
                   <div class="small-10 columns">
                     <input type="text" placeholder="Search by keyword, topic or branch location" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search by keyword, topic or branch location'">
@@ -45,14 +37,9 @@
                     <a href="#" class="button postfix"><%= image_tag('searchicon.png', class: "margin65b") %></a>
                   </div>
                 </div>
-              </div>
-            </div>
 
 
         </section>
-        </div>
-      </div>
-    </div>
 
   </nav>
 </div>
@@ -61,7 +48,7 @@
 <div class="row">
   <div class="large-2 columns sidebarmaincontent">
     <ul class="side-nav">
-      <li class="socialnav"><a href="#" class="usernav">
+      <li class="socialnav sidehoverbutton"><a href="#" class="usernav">
         <div class="row valign-middle">
           <div class="large-4 columns text-left">
             <%= image_tag('defaultpropic.png') %>
@@ -71,14 +58,14 @@
           </div>
         </div>
         </a></li>
-      <li class="socialnav">
+      <li class="socialnav sidehoverbutton">
         <a href="#">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('messagesicon.png') %>
             </div>
             <div class="large-8 columns">
-              <span class="">Messages</span>
+              <span class="sidehovertext">Messages</span>
             </div>
             <div class="large-1 columns text-right grey">
               3
@@ -86,14 +73,14 @@
           </div>
         </a>
       </li>
-      <li class="socialnav">
+      <li class="socialnav sidehoverbutton">
         <a href="#">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('notificationicon.png') %>
             </div>
             <div class="large-8 columns">
-              <span class="">Notifications</span>
+              <span class="sidehovertext">Notifications</span>
             </div>
             <div class="large-1 columns text-right grey">
               12
@@ -102,48 +89,48 @@
         </a>
       </li>
       <div id="sidedropdown">
-        <li class="socialnav">
+        <li class="socialnav sidehoverbutton">
           <a href="#">
             <div class="row">
               <div class="large-3 columns content">
-                <%= image_tag('plusicon.png') %>
+                <%= image_tag('profileicon.png') %>
               </div>
               <div class="large-9 columns">
-                <span class="">My Profile</span>
+                <span class="sidehovertext">My Profile</span>
               </div>
             </div>
           </a>
         </li>
-        <li class="socialnav">
+        <li class="socialnav sidehoverbutton">
           <%= link_to edit_user_registration_path do %>
             <div class="row">
               <div class="large-3 columns content">
-                <%= image_tag('plusicon.png') %>
+                <%= image_tag('editaccounticon.png') %>
               </div>
               <div class="large-9 columns">
-                <span class="">Edit Account</span>
+                <span class="sidehovertext">Edit Account</span>
               </div>
             </div>
           <% end %>
         </li>
-        <li class="socialnav">
+        <li class="socialnav sidehoverbutton">
           <%= link_to destroy_user_session_path, :method => :delete do %>
             <div class="row">
               <div class="large-3 columns content">
-                <%= image_tag('plusicon.png') %>
+                <%= image_tag('logouticon.png') %>
               </div>
               <div class="large-9 columns">
-                <span class="">Logout</span>
+                <span class="sidehovertext">Logout</span>
               </div>
             </div>
           <% end %>
         </li>
       </div>
-      <li class="socialnav" id="more">
+      <li class="socialnav sidehoverbutton" id="more">
         <a href="#">
           <div class="row">
             <div class="large-3 columns content">
-              <%= image_tag('plusicon.png') %>
+              <%= image_tag('plusicon.png', id: "moreicon") %>
             </div>
             <div class="large-9 columns">
               <span class="" id="moretext">More</span>
@@ -299,12 +286,14 @@
   $("#sidedropdown").hide();
   $("#more").click( function(){
     if($("#sidedropdown").is(':visible')){
-      $("#sidedropdown").hide("500");
+      $("#sidedropdown").slideUp("medium");
       $("#moretext").text("More");
+      $("#moreicon").attr("src", "/assets/plusicon.png")
     }
     else{ 
-      $("#sidedropdown").show("500");
+      $("#sidedropdown").slideDown("medium");
       $("#moretext").text("Less");
+      $("#moreicon").attr("src", "/assets/minusicon.png")
        }
   });
 
