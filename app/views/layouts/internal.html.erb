@@ -9,8 +9,9 @@
 </head>
 <body> 
   
-<div class="sticky">
+<div class="row sticky">
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <div class="large-2 columns">
       <ul class="title-area">
         <li class="name">
           <h1><a href="#"><%= image_tag('logo.png') %></a></h1>
@@ -18,17 +19,24 @@
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-        <section class="top-bar-section">
+    </div>
 
+    <div class="large-10 columns">
+        <section class="top-bar-section">
+          <div class="row valign-middle">
+
+            <div class="large-6 columns">
               <!-- Left Nav Section -->
               <ul class="left">
                 <li><a href="<%= root_path %>" class="">HOME</a></li>
                 <li><a href="#" class="">BRANCHES</a></li>
                 <li><a href="#" class="">GEMS</a></li>
               </ul>
+            </div>
 
+            <div class="large-6 columns content">
               <!-- Right Nav Section -->
-              <div class="right searchpadding">
+              <div class="right">
                 <div class="row collapse">
                   <div class="small-10 columns">
                     <input type="text" placeholder="Search by keyword, topic or branch location" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search by keyword, topic or branch location'">
@@ -37,9 +45,14 @@
                     <a href="#" class="button postfix"><%= image_tag('searchicon.png', class: "margin65b") %></a>
                   </div>
                 </div>
+              </div>
+            </div>
 
 
         </section>
+        </div>
+      </div>
+    </div>
 
   </nav>
 </div>
