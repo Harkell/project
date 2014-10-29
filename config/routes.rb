@@ -19,8 +19,12 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  resources :messages, only: [:index, :show, :create]
+
   devise_for :users #, :path_prefix => 'd' #or devise - this prefix would seperate devise users from resources users
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy] do
+    resources :messages, only: [:new]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
