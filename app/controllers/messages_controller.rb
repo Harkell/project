@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+	layout "layouts/internal"
+
   def index
   end
 
