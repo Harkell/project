@@ -32,7 +32,7 @@
 			    	<div class="large-9 columns whitebg supportrow1">
 			    			<div class="row content padding2v messageheader">
 				    			<div class="large-6 columns">
-					    			<h6 class="lineheight0 margin0b weight500">Jordan Short <%= image_tag('rightarrow.png', class: "rightarrow") %><span class="weight300">Callum Short</span></h6>
+					    			<h6 class="lineheight0 margin0b weight500"><%= @message.sender.forename + " " + @message.sender.surname %><%= image_tag('rightarrow.png', class: "rightarrow") %><span class="weight300"><%= @message.recipient.forename + " " + @message.recipient.surname %></span></h6>
 					    		</div>
 					    		<div class="large-6 columns text-right">
 					    			<h6 class="font09 lineheight0 margin0b weight300">29/10/2014</h6>
@@ -40,7 +40,7 @@
 					    	</div>
 			    			<div class="row content2 padding2v">
 				    			<div class="large-12 columns">
-					    			<p class="weight300 font09">Hi,<br><br>Just wondering if you have managed to do the following stuff?</p>
+					    			<p class="weight300 font09"><%= @message.body %></p>
 					    		</div>
 					    	</div>
 			    			<div class="row content2 padding1v messagefooter">

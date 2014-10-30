@@ -61,7 +61,7 @@
 <div class="row">
   <div class="large-2 columns sidebarmaincontent">
     <ul class="side-nav">
-      <li class="socialnav sidehoverbutton"><a href="#" class="usernav">
+      <li class="socialnav sidehoverbutton"><%= link_to user_path(current_user), class: "usernav" do %>
         <div class="row valign-middle">
           <div class="large-4 columns text-left">
             <%= image_tag('defaultpropic.png') %>
@@ -70,9 +70,9 @@
             <p class="margin0b lineheight12"><span class="font08"><%= current_user.forename %> <%= current_user.surname %></span><br><span class="font07">Kabin Devon</span></p>
           </div>
         </div>
-        </a></li>
+        <% end %></li>
       <li class="socialnav sidehoverbutton">
-        <a href="#">
+        <%= link_to messages_path do %>
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('messagesicon.png') %>
@@ -81,10 +81,10 @@
               <span class="sidehovertext">Messages</span>
             </div>
             <div class="large-1 columns text-right grey">
-              3
+              <%= @unread_message_count %>
             </div>
           </div>
-        </a>
+        <% end %>
       </li>
       <li class="socialnav sidehoverbutton">
         <a href="#">

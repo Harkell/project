@@ -1,2 +1,13 @@
 <h1>Messages#new</h1>
 <p>Find me in app/views/messages/new.html.erb</p>
+<%= current_user.id %>
+<%= form_for(@newMessage) do |f| %>
+	<%= f.label "Recipient ID" %>
+	<%= f.hidden_field :recipient_id, :value => @user.id %>
+	<%= f.hidden_field :sender_id, :value => current_user.id %>
+	<%= f.label "Subject" %>
+	<%= f.text_field :subject %>
+	<%= f.label "Body" %>
+	<%= f.text_field :body %>
+	<%= f.submit "Send0" %>
+<% end %>
