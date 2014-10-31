@@ -1,4 +1,83 @@
-Profile page
+<div class="grey333bg positionrelative">
+	<div class="row content2 padding5t1b">
+		<div class="large-1 columns text-center">
+			<%= image_tag('useravatar.png', class: "useravatar") %>
+		</div>
+		<div class="large-5 columns content">
+			<h5 class="white weight500 font09 margin0b">Kabin Devon</h5>
+			<h2 class="white weight500 font2 lineheight0"><span class="bt1blue">Callum Short</span></h2>
+		</div>
+		<div class="large-2 columns text-center greytabsposition">
+			<ul class="inline-list greytabs">
+				<li>Send Message</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="row content1 padding2t padding2b">
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="row">
+				<div class="large-8 columns content1">
+			    <div class="panel">
+			      <div class="row">
+			        <div class="large-12 columns text-left">
+			          <h5 class="weight500">Messages</h5>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+				<div class="large-4 columns content1">
+			    <div class="panel">
+			      <div class="row">
+			        <div class="large-12 columns text-left">
+			          <h5 class="weight500">Statistics</h5>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="row whitebg bb1grey">
+			    	<div class="large-6 columns text-center br1grey">
+			    		<div class="margin1v"><h4 class="lineheight0 margin0b gradient">2,320</h4><h6 class="lineheight0 margin0b font09 gradient">Karma</h6></div>
+			    	</div>
+			    	<div class="large-6 columns text-center">
+			    		<div class="margin1v"><h4 class="lineheight0 margin0b gradient">20</h4><h6 class="lineheight0 margin0b font09 gradient">Updates</h6></div>
+			    	</div>
+			    </div>
+			    <div class="row whitebg">
+			    	<div class="large-6 columns text-center br1grey">
+			    		<div class="margin1v"><h4 class="lineheight0 margin0b gradient">6</h4><h6 class="lineheight0 margin0b font09 gradient">Forum Threads</h6></div>
+			    	</div>
+			    	<div class="large-6 columns text-center">
+			    		<div class="margin1v"><h4 class="lineheight0 margin0b gradient">12</h4><h6 class="lineheight0 margin0b font09 gradient">Forum Replies</h6></div>
+			    	</div>
+			    </div>
+			  </div>
+			</div>
+	  </div>
+	</div>
+	</div>
+
+</div>
+
+	<script type="text/javascript">
+	  (function() {
+
+	      $(function() {
+
+	        $(function() {
+	          $('.supportrow1').matchHeight();
+	        });
+
+	        $(function() {
+	          $('.supportrow2').matchHeight();
+	        });
+	        
+	      });
+
+	  })();
+	</script>
 
 <%= @user.email %>
+
 <%= link_to "Send message", new_user_message_path(@user) %>
