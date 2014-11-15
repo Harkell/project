@@ -10,7 +10,7 @@
 
 	<div class="row panel">
 	  <% @users.each do |user| %>
-					<div class="row whitebg br3t br3b">
+					<div class="row whitebg">
 						<div class="large-10 columns text-left content padding04v">
 		          <p class="lineheight0 margin0b"><%= user.forename %><%= user.surname %><%= user.email %>
 		          	<%= link_to "Edit", edit_user_path(user) %>

@@ -22,10 +22,9 @@ ActiveRecord::Schema.define(version: 20141114193922) do
   create_table "messages", force: true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
+    t.string   "subject"
     t.text     "body"
     t.datetime "read_at"
-    t.boolean  "recipient_deleted"
-    t.boolean  "sender_deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

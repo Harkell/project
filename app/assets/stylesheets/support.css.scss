@@ -1,3 +1,20 @@
 // Place all the styles related to the support controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.ticketnew{
+	border-left: 4px solid #358ac7;
+}
+
+.ticketnew:hover{
+	border-left: 4px solid #358ac7 !important;
+}
+
+.ticketdefault{
+	border-left: 4px solid #d5d5d5;
+}
+
+.ticketdefault{
+	border-left: 4px solid #d5d5d5 !important;
+}
