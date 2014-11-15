@@ -1,0 +1,11 @@
+<h1>Tickets#new</h1>
+<p>Find me in app/views/tickets/new.html.erb</p>
+<%= form_for(@new_ticket) do |f| %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :closed, :value => false %>
+	<%= f.label "Subject" %>
+	<%= f.text_field :subject %>
+	<%= f.label "Query" %>
+	<%= f.text_area :content %>
+	<%= f.submit "Send0" %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Branches#index</h1>
+<p>Find me in app/views/branches/index.html.erb</p>
+<% @branches.each do |branch| %>
+	<%= branch.name %>
+	<% User.where(branch_id: branch.id).each do |user| %>
+		<%= user.forename + " " + user.surname %>
+	<% end %>
+<% end %>

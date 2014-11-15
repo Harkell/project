@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
  
 
+  get 'panel/index'
 
   get 'support/index'
 
-  get 'updates/index'
-
-  get 'updates/new'
-
-  get 'updates/edit'
-
-  get 'updates/show'
-
   get 'portal/index'
 
+  resources :updates, only: [:index, :create]
   resources :newsposts
+  resources :tickets, only: [:index, :new, :show, :create]
+
+  resources :threads
+
+  resources :branches, only: [:index, :new, :create, :destroy]
 
 
   get 'home/index'

@@ -37,21 +37,21 @@
           </div>
         </div>
       </div>
-
-      <a href="#">
+      <% @paginated_updates.each do |update| %>
+      	<a href="<%= user_path(update.user) %>">
 	      <div class="margin125b">
 	        <div class="row updatesborder">
 	          <div class="large-12 columns text-left">
 	            <div class="panel br3t">
-	              <h6 class="weight500 font08">Callum Short<span class="font07 weight300"> Kabin Devon</span></h6>
+	              <h6 class="weight500 font08"><%= update.user.forename + " " + update.user.surname %> <span class="font07 weight300"><%= update.user.branch.name %></span></h6>
 	            </div>
 	            <div class="panel whitepanel">
-	              <p class="font08 weight500 padding02t06b">Heading out to the franchise conference this weekend, will post some pictures on the forum once I get back. Wish me luck!</p>
+	              <p class="font08 weight500 padding02t06b"><%= update.content %></p>
 	            </div>
 	            <div class="whitebg content bt1grey datepanel br3b">
 	              <div class="row valign-middle">
 	                <div class="large-6 columns text-left">
-	                  <h6 class="weight300 font07 margin0b">5 hours ago</h6>
+	                  <h6 class="weight300 font07 margin0b"><%= time_ago_in_words(update.created_at) + " ago" %></h6>
 	                </div>
 	                <div class="large-6 columns text-right">
 	                  <%= image_tag('heartit.png', class: "margin0b") %>
@@ -61,88 +61,14 @@
 	          </div>
 	        </div>
 	      </div>
-	    </a>
+ 		</a>
+	  <% end %>
+							    	<%= paginate @paginated_updates %>
+	</div>
 
-      <a href="#">
-	      <div class="margin125b">
-	        <div class="row updatesborder">
-	          <div class="large-12 columns text-left">
-	            <div class="panel br3t">
-	              <h6 class="weight500 font08">Callum Short<span class="font07 weight300"> Kabin Devon</span></h6>
-	            </div>
-	            <div class="panel whitepanel">
-	              <p class="font08 weight500 padding02t06b">Heading out to the franchise conference this weekend, will post some pictures on the forum once I get back. Wish me luck!</p>
-	            </div>
-	            <div class="whitebg content bt1grey datepanel br3b">
-	              <div class="row valign-middle">
-	                <div class="large-6 columns text-left">
-	                  <h6 class="weight300 font07 margin0b">5 hours ago</h6>
-	                </div>
-	                <div class="large-6 columns text-right">
-	                  <%= image_tag('heartit.png', class: "margin0b") %>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </a>
-
-      <a href="#">
-	      <div class="margin125b">
-	        <div class="row updatesborder">
-	          <div class="large-12 columns text-left">
-	            <div class="panel br3t">
-	              <h6 class="weight500 font08">Callum Short<span class="font07 weight300"> Kabin Devon</span></h6>
-	            </div>
-	            <div class="panel whitepanel">
-	              <p class="font08 weight500 padding02t06b">Heading out to the franchise conference this weekend, will post some pictures on the forum once I get back. Wish me luck!</p>
-	            </div>
-	            <div class="whitebg content bt1grey datepanel br3b">
-	              <div class="row valign-middle">
-	                <div class="large-6 columns text-left">
-	                  <h6 class="weight300 font07 margin0b">5 hours ago</h6>
-	                </div>
-	                <div class="large-6 columns text-right">
-	                  <%= image_tag('heartit.png', class: "margin0b") %>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </a>
-
-      <a href="#">
-	      <div class="margin125b">
-	        <div class="row updatesborder">
-	          <div class="large-12 columns text-left">
-	            <div class="panel br3t">
-	              <h6 class="weight500 font08">Callum Short<span class="font07 weight300"> Kabin Devon</span></h6>
-	            </div>
-	            <div class="panel whitepanel">
-	              <p class="font08 weight500 padding02t06b">Heading out to the franchise conference this weekend, will post some pictures on the forum once I get back. Wish me luck!</p>
-	            </div>
-	            <div class="whitebg content bt1grey datepanel br3b">
-	              <div class="row valign-middle">
-	                <div class="large-6 columns text-left">
-	                  <h6 class="weight300 font07 margin0b">5 hours ago</h6>
-	                </div>
-	                <div class="large-6 columns text-right">
-	                  <%= image_tag('heartit.png', class: "margin0b") %>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </a>
-    </div>
 
     <div class="row">
     	<div class="large-7 columns">
-
-
 		    <div class="large-5 columns content1">
 		      <div class="forumactivitypanel">
 		      	<div class="panel">

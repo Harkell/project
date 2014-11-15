@@ -30,14 +30,15 @@
 			    		<div class="sidehoverbutton messagetabs"><h6 class="content margin0b font08 sidehovertext">Sent Messages</h6></div>
 			    	</div>
 			    	<div class="large-9 columns whitebg supportrow1">
-			    		<% @messages.each do |message| %>
+			    		<%= @no_messages %>
+			    		<% @paginated_messages.each do |message| %>
 			    			<%= link_to message_path(message) do %>
 			    				<div class="row messagesbg padding1v1h">
 				    				<div class="large-3 columns">
 					    				<h6 class="font08 lineheight0 margin0b weight500"><%= message.sender.forename %> <%= message.sender.surname %></h6>
 					    			</div>
 					    			<div class="large-7 columns">
-					    				<h6 class="font08 lineheight0 margin0b weight500"><%= message.subject %></h6>
+					    				<h6 class="font08 lineheight0 margin0b weight500"><%= message.body %></h6>
 					    			</div>
 					    			<div class="large-2 columns">
 					    				<h6 class="font08 lineheight0 margin0b"><%= message.created_at.strftime("%H:%M %d/%m/%Y") %></h6>
@@ -45,6 +46,7 @@
 					    		</div>
 				    		<% end %>
 				    	<% end %>
+				    	<%= paginate @paginated_messages %>
 			    	</div>
 			    </div>
 			  </div>

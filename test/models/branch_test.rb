@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NewspostTest < ActiveSupport::TestCase
+class BranchTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

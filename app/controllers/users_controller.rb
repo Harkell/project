@@ -13,7 +13,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    if @user.approved == false  # redirects away from user profile if user is not approved
+      redirect_to root_path
+    end
+    @new_update = Update.new
+    #@user.id == current_user.id
 
+    @updates = Update.where(:user_id => @user.id).reverse
   end
 
   def edit

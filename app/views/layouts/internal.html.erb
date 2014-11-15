@@ -29,7 +29,7 @@
               <!-- Left Nav Section -->
               <ul class="left">
                 <li><a href="<%= root_path %>" class="">HOME</a></li>
-                <li><a href="#" class="">BRANCHES</a></li>
+                <li><a href="<%= branches_path %>" class="">BRANCHES</a></li>
                 <li><a href="#" class="">GEMS</a></li>
               </ul>
             </div>
@@ -67,7 +67,7 @@
             <%= image_tag('defaultpropic.png') %>
           </div>
           <div class="large-9 columns text-left">
-            <p class="margin0b lineheight12"><span class="font08"><%= current_user.forename %> <%= current_user.surname %></span><br><span class="font07">Kabin Devon</span></p>
+            <p class="margin0b lineheight12"><span class="font08"><%= current_user.forename %> <%= current_user.surname %></span><br><span class="font07"><%= @branch_name %></span></p>
           </div>
         </div>
         <% end %></li>
@@ -81,7 +81,7 @@
               <span class="sidehovertext">Messages</span>
             </div>
             <div class="large-1 columns text-right grey">
-             <%#= @unread_message_count %>
+             <%= @unread_message_count %>
             </div>
           </div>
         <% end %>
@@ -103,7 +103,7 @@
       </li>
       <div id="sidedropdown">
         <li class="socialnav sidehoverbutton">
-          <a href="#">
+          <a href="<%= user_path(current_user) %>">
             <div class="row">
               <div class="large-3 columns content">
                 <%= image_tag('profileicon.png') %>
@@ -159,7 +159,7 @@
         </div>
       </li>
       <li class="sidehoverbutton">
-        <a href="#">
+        <a href="<%= portal_index_path %>">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('portalicon.png') %>
@@ -171,7 +171,7 @@
         </a>
       </li>
       <li class="sidehoverbutton">
-        <a href="#">
+        <a href="<%= support_index_path %>">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('supporticon.png') %>
@@ -202,7 +202,7 @@
         </a>
       </li>
       <li class="sidehoverbutton">
-        <a href="#">
+        <a href="<%= threads_path %>">
           <div class="row">
             <div class="large-3 columns content">
               <%= image_tag('forumicon.png') %>

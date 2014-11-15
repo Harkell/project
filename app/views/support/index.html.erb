@@ -26,6 +26,10 @@
 			      </div>
 			    </div>
 			    <div class="row whitebg content3 supportrow1">
+			    <% @paginated_tickets.each do |ticket| %>
+			    	<%= ticket.subject %>
+
+			   	<% end %>
 			    </div>
 			  </div>
 			</div>

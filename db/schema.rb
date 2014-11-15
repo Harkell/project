@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029172434) do
+ActiveRecord::Schema.define(version: 20141114193922) do
+
+  create_table "branches", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
-    t.string   "subject"
     t.text     "body"
     t.datetime "read_at"
+    t.boolean  "recipient_deleted"
+    t.boolean  "sender_deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +39,22 @@ ActiveRecord::Schema.define(version: 20141029172434) do
   end
 
   add_index "newsposts", ["user_id"], name: "index_newsposts_on_user_id"
+
+  create_table "tickets", force: true do |t|
+    t.string   "subject"
+    t.text     "content"
+    t.boolean  "closed"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "updates", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "forename",               default: "",    null: false
@@ -50,6 +73,7 @@ ActiveRecord::Schema.define(version: 20141029172434) do
     t.datetime "updated_at"
     t.boolean  "approved",               default: false, null: false
     t.boolean  "admin",                  default: false, null: false
+    t.integer  "branch_id"
   end
 
   add_index "users", ["admin"], name: "index_users_on_admin"

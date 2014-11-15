@@ -6,7 +6,11 @@ class MessagesController < ApplicationController
 
   def index
   	@messages = Message.where(recipient_id: current_user.id).reverse
+    @paginated_messages = Kaminari.paginate_array(@messages).page(params[:page]).per(2)
   	@sent_messages = Message.where(sender_id: current_user.id)
+    if Message.where(recipient_id: current_user.id).count == 0
+      @no_messages = "Your inbox is empty."
+    end
   end
 
   def show
@@ -15,7 +19,7 @@ class MessagesController < ApplicationController
     	@message.read_message if @message.recipient_id == current_user.id
   	else
     	redirect_to root_path
-	end
+	  end
   end
 
   def new
@@ -46,7 +50,7 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-  	params.require(:message).permit(:recipient_id, :sender_id, :subject, :body)
+  	params.require(:message).permit(:recipient_id, :sender_id, :body)
   end
 
 end

@@ -6,4 +6,11 @@ class Message < ActiveRecord::Base
   	self.read_at ||= Time.now
   	save
   end
+  def recipient_delete
+  	self.recipient_deleted == true
+  end
+  def sender_delete
+
+  end
+
 end

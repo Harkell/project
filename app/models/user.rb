@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :newsposts
+  has_many :updates
+  has_many :tickets
+  belongs_to :branch
 
   def active_for_authentication? # Blocks login for unapproved users
     super && approved? 
