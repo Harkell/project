@@ -1,3 +1,55 @@
 // Place all the styles related to the branches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#map-canvas { height: 20em; margin: 0; padding: 0;}
+
+#map-canvas img { 
+    max-width: none !important; 
+    height: auto !important; 
+    background: none !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.blregion{
+	margin-top: 0;
+	line-height: 18px;
+}
+
+.blbrand{
+	margin-bottom: 0;
+	font-size: 0.8rem;
+	color: #348ac7;
+	padding-left: 0.1rem
+}
+
+.blcount{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: 1.2rem;
+}
+
+.blmembers{
+	margin-top: 0;
+	font-size: 0.7rem;
+	line-height: 16px;
+}
+
+.blviewmembers{
+	background: #fff;
+	transition-duration: 300ms;
+}
+
+.blviewmembers:hover{
+	background: #f5f5f5;
+	transition-duration: 300ms;
+}
+
+.blviewmemberstext{
+	padding: 0.6rem 0 0.5rem 0;
+	margin-bottom: 0;
+	margin-top: 0;
+}

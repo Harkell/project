@@ -20,14 +20,17 @@
 				<div class="large-12 columns content1">
 			    <div class="panel">
 			      <div class="row">
-			        <div class="large-12 columns text-left">
-			          <h5 class="weight500">Your Support Tickets</h5>
-			        </div>
+	            <div class="large-9 columns text-left">
+	              <h5 class="weight500">Your Support Tickets</h5>
+	            </div>
+	            <div class="large-3 columns text-right">
+	              <a href= "#"><%= image_tag('plusradiusbox.png', class:"padding04v")  %></a>
+	            </div>
 			      </div>
 			    </div>
 			    <div class="row whitebg padding125t content3 supportrow1">
         <div class="margin125b">
-          <div class="row whitebg forumactivityborder ticketnew">
+          <div class="row whitebg forumactivityborder">
             <div class="large-8 columns content padding07v">
               <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
             </div>
@@ -40,7 +43,7 @@
           </div>
         </div>
         <div class="margin125b">
-          <div class="row whitebg forumactivityborder ticketnew">
+          <div class="row whitebg forumactivityborder">
             <div class="large-8 columns content padding07v">
               <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
             </div>
@@ -53,7 +56,7 @@
           </div>
         </div>
         <div class="margin125b">
-          <div class="row whitebg forumactivityborder ticketdefault">
+          <div class="row whitebg forumactivityborder">
             <div class="large-8 columns content padding07v">
               <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
             </div>
@@ -66,7 +69,7 @@
           </div>
         </div>
         <div class="margin125b">
-          <div class="row whitebg forumactivityborder ticketdefault">
+          <div class="row whitebg forumactivityborder">
             <div class="large-8 columns content padding07v">
               <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
             </div>
@@ -79,7 +82,7 @@
           </div>
         </div>
         <div class="margin125b">
-          <div class="row whitebg forumactivityborder ticketdefault">
+          <div class="row whitebg forumactivityborder tic">
             <div class="large-8 columns content padding07v">
               <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
             </div>
@@ -235,6 +238,10 @@
 
 	        $(function() {
 	          $('.supportrow2').matchHeight();
+	        });
+
+	        $(function() {
+	          $('.header1').matchHeight();
 	        });
 	        
 	      });

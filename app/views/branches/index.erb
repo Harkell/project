@@ -1,8 +1,186 @@
-<h1>Branches#index</h1>
-<p>Find me in app/views/branches/index.html.erb</p>
-<% @branches.each do |branch| %>
-	<%= branch.name %>
-	<% User.where(branch_id: branch.id).each do |user| %>
-		<%= user.forename + " " + user.surname %>
+
+<div class="row">
+	<div class="large-12 columns">
+		<div id="map-canvas"></div>
+	</div>
+</div>
+
+<div class="row content1 padding2t">
+	<div class="row">
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row content1 padding2t padding2b">
+	<div class="row">
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion">Devon</h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount">28</h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<% @branches.each do |branch| %>
+		<%= branch.name %>
+		<% User.where(branch_id: branch.id).each do |user| %>
+			<%= user.forename + " " + user.surname %>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
+
+
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBytrvkPZqxOswg7iw5T3V2Z9C85cSRQxg">
+  </script>
+   <script>
+		function initialize() {
+		  var mapOptions = {
+		    zoom: 5,
+		    center: new google.maps.LatLng(53.8784404, 1.56005859),
+		    styles: [{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"weight":8},{"hue":"#000000"},{"lightness":-18},{"gamma":8.78}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"weight":0.2},{"lightness":29}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#000000"},{"saturation":36},{"lightness":40}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"weight":1.2},{"lightness":17}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"color":"#ffffff"},{"weight":0.1},{"hue":"#ffffff"},{"saturation":-100},{"lightness":-17}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"color":"#ffffff"},{"weight":0.1}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"color":"#ffffff"},{"weight":0.1}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#ffffff"},{"weight":0.1},{"lightness":-66}]},{"featureType":"all","elementType":"labels.text","stylers":[{"color":"#ffffff"},{"weight":0.1}]},{"featureType":"administrative.locality","elementType":"labels.text","stylers":[{"color":"#ffffff"},{"lightness":-28}]}]
+		  };
+
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+		      mapOptions);
+		}
+
+		function loadScript() {
+		  var script = document.createElement('script');
+		  script.type = 'text/javascript';
+		  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+		      'callback=initialize';
+		  document.body.appendChild(script);
+		}
+
+
+		window.onload = loadScript;
+		google.maps.event.addDomListener(window, 'page:load', initialize);
+  </script>
+	<script type="text/javascript">
+	  (function() {
+	      $(function() {
+	        $(function() {
+	          $('.branchlistrow1').matchHeight();
+	        });
+	        
+	      });
+	  })();
+	</script>
+</head>
