@@ -1,3 +1,35 @@
+		<div class="row adminbar" id="adminbar">
+			<div class="row adminbaroverlay">
+					<div class="large-2 columns">
+						<div class="row valign-middle">
+							<div class="large-12 columns content2 adminbarsidebar">
+								<%= image_tag('admintitle.png') %>
+							</div>
+					</div>
+				</div>
+				<div class="large-9 columns">
+					<div class="row valign-middle">
+						<div class="large-12 columns adminbarsidebar">
+		        	<p class="margin0b padding0b margin0t padding0t"><span class="adminbutton">Manage Users</span>
+		        	<span class="adminbutton">Manage Branches</span>
+		        	<span class="adminbutton">Manage News</span></p>					
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="large-1 columns adminarrow" id="adminbarminus">
+						<div class="row valign-middle">
+							<div class="large-12 columns adminbarsidebar text-center">
+								<%= image_tag('minusicon.png') %>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<a href="#"><span class="adminbarplus">ADMIN BAR</span></a>
+
    <div class="row">
       <div class="large-8 columns hqnewstrigger2">
         <div class="news1bg latestnews">
@@ -190,6 +222,16 @@
 	        $(function() {
 	          $('.forumactivityrecentguides').matchHeight();
 	        });
+
+				 $("#adminbarminus").click(function(){
+				 	$("#adminbar").slideUp();
+				 	$(".adminbarplus").slideDown();
+				 });
+
+				 $(".adminbarplus").click(function(){
+				 	$("#adminbar").slideDown();
+				 	$(".adminbarplus").slideUp();
+				 });
 	        
 	      });
 	  })();

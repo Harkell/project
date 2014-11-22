@@ -15,11 +15,6 @@ ActiveRecord::Schema.define(version: 20141114193922) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "area"
-    t.string   "postcode"
-    t.string   "phonenumber"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,10 +22,9 @@ ActiveRecord::Schema.define(version: 20141114193922) do
   create_table "messages", force: true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
+    t.string   "subject"
     t.text     "body"
     t.datetime "read_at"
-    t.boolean  "recipient_deleted"
-    t.boolean  "sender_deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,7 +49,7 @@ ActiveRecord::Schema.define(version: 20141114193922) do
   end
 
   create_table "updates", force: true do |t|
-    t.text     "content"
+    t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
