@@ -1,5 +1,5 @@
 class UpdatesController < ApplicationController
-
+  layout "layouts/internal"
 
   def index
   end

@@ -1,12 +1,13 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show]
   before_action :set_user, only: [:new]
+  before_action :internal, only: [:index, :show, :new]
   layout "layouts/internal"
 
 
   def index
   	@messages = Message.where(recipient_id: current_user.id).reverse
-    @paginated_messages = Kaminari.paginate_array(@messages).page(params[:page]).per(2)
+    @paginated_messages = Kaminari.paginate_array(@messages).page(params[:page]).per(10)
   	@sent_messages = Message.where(sender_id: current_user.id)
     if Message.where(recipient_id: current_user.id).count == 0
       @no_messages = "Your inbox is empty."

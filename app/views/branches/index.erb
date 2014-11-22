@@ -6,145 +6,36 @@
 </div>
 
 <div class="row content1 padding2t">
+
 	<div class="row">
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row content1 padding2t padding2b">
-	<div class="row">
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-		<div class="large-4 columns content">
-			<div class="row lightgreybg padding1v">
-				<div class="large-8 columns content">
-					<h6 class="blbrand">Kabin</h6>
-					<h3 class="weight700 blregion">Devon</h3>
-				</div>
-				<div class="large-4 columns content text-center">
-					<h4 class="darkgrey blcount">28</h4>
-					<h6 class="darkgrey blmembers">Members</h6>
-				</div>
-			</div>
-			<div class="row whitebg">
-				<br><br><br><br>
-			</div>
-			<div class="row blviewmembers bt1grey">
-				<div class="large-12 columns text-center">
-					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="row">
 	<% @branches.each do |branch| %>
-		<%= branch.name %>
-		<% User.where(branch_id: branch.id).each do |user| %>
-			<%= user.forename + " " + user.surname %>
-		<% end %>
+	<a href="<%= branch_path(branch) %>">
+		<div class="large-4 columns content">
+			<div class="row lightgreybg padding1v">
+				<div class="large-8 columns content">
+					<h6 class="blbrand">Kabin</h6>
+					<h3 class="weight700 blregion"><%= branch.name %></h3>
+				</div>
+				<div class="large-4 columns content text-center">
+					<h4 class="darkgrey blcount"><%= branch.user.count %></h4>
+					<h6 class="darkgrey blmembers">Members</h6>
+				</div>
+			</div>
+			<div class="row whitebg">
+				<br><br><br><br>
+			</div>
+		</a>
+			<div class="row blviewmembers bt1grey">
+				<div class="large-12 columns text-center">
+					<h6 class="weight500 font07 blviewmemberstext">VIEW ALL MEMBERS</h6>
+				</div>
+			</div>
+		</div>
 	<% end %>
-</div>
 
+	</div>
+
+</div>
 
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBytrvkPZqxOswg7iw5T3V2Z9C85cSRQxg">

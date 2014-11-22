@@ -4,8 +4,7 @@ class HomeController < ApplicationController
   layout "layouts/internal"
 
   def index
-    @updates = Update.all.reverse
-    @paginated_updates = Kaminari.paginate_array(@updates).page(params[:page]).per(5)
+    @updates = Update.all.last(5).reverse
 
   end
 

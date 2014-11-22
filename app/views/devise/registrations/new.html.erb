@@ -13,7 +13,7 @@
   <%= f.email_field :email, autofocus: true %></div>
 
   <div><%= f.label :branch %><br />
-    <%= f.collection_select :branch_id, Branch.order(:name), :id, :name %></div>
+    <%= f.collection_select :branch_id, Branch.order(:id), :id, :name %></div>
 
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>

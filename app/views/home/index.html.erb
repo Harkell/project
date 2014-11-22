@@ -33,11 +33,11 @@
             <h5 class="weight500">Latest Updates</h5>
           </div>
           <div class="large-5 columns text-right">
-            <%= link_to image_tag('eyeradiusbox.png', class:"padding04v"), newsposts_path %>
+            <%= link_to image_tag('eyeradiusbox.png', class:"padding04v"), updates_path %>
           </div>
         </div>
       </div>
-      <% @paginated_updates.each do |update| %>
+      <% @updates.each do |update| %>
       	<a href="<%= user_path(update.user) %>">
 	      <div class="margin125b">
 	        <div class="row updatesborder">
@@ -63,7 +63,6 @@
 	      </div>
  		</a>
 	  <% end %>
-							    	<%= paginate @paginated_updates %>
 	</div>
 
 

@@ -1,9 +1,10 @@
 class BranchesController < ApplicationController
   before_action :branch_params, only: [:create]
+  before_action :internal, only: [:index, :new, :show]
   layout "layouts/internal"
 
   def index
-    @branches = Branch.all
+    @branches = Branch.offset(1).all
   end
   def new
   	@newBranch = Branch.new
@@ -19,6 +20,9 @@ class BranchesController < ApplicationController
         	format.json {  }
         end
     end
+  end
+  def show
+
   end
 
   private

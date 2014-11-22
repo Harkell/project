@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :threads
 
-  resources :branches, only: [:index, :new, :create, :destroy]
+  resources :branches, only: [:index, :new, :create, :destroy, :show]
 
 
   get 'home/index'

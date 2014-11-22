@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :admin_only, only: [:index, :edit, :update, :destroy] # Makes sure only admins can view these pages
 	before_action :set_user, only: [:show, :edit, :destroy, :update] # Sets user ID
 	before_action :user_params, only: [:update] # Sets permitted params
+  before_action :internal, only: [:index, :show, :edit]
   layout "layouts/internal"
 
   def index

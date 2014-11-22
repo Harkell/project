@@ -24,79 +24,29 @@
 	              <h5 class="weight500">Your Support Tickets</h5>
 	            </div>
 	            <div class="large-3 columns text-right">
-	              <a href= "#"><%= image_tag('plusradiusbox.png', class:"padding04v")  %></a>
+	              <a href= "<%= new_ticket_path %>"><%= image_tag('plusradiusbox.png', class:"padding04v")  %></a>
 	            </div>
 			      </div>
 			    </div>
 			    <div class="row whitebg padding125t content3 supportrow1">
-        <div class="margin125b">
-          <div class="row whitebg forumactivityborder">
-            <div class="large-8 columns content padding07v">
-              <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
-            </div>
-            <div class="large-2 columns content padding08v greybg text-center lightgreybg">
-            	<p class="font07 margin0b weight500 textup darkgrey">1 Replies</p>
-            </div>
-          	<div class="large-2 columns content padding08v greybg text-center lightgreybg">
-              <p class="font07 margin0b weight500 textup darkgrey">15/11/2014</p>
-            </div>
-          </div>
-        </div>
-        <div class="margin125b">
-          <div class="row whitebg forumactivityborder">
-            <div class="large-8 columns content padding07v">
-              <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
-            </div>
-            <div class="large-2 columns content padding08v greybg text-center lightgreybg">
-            	<p class="font07 margin0b weight500 textup darkgrey">1 Replies</p>
-            </div>
-          	<div class="large-2 columns content padding08v greybg text-center lightgreybg">
-              <p class="font07 margin0b weight500 textup darkgrey">15/11/2014</p>
-            </div>
-          </div>
-        </div>
-        <div class="margin125b">
-          <div class="row whitebg forumactivityborder">
-            <div class="large-8 columns content padding07v">
-              <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
-            </div>
-            <div class="large-2 columns content padding08v greybg text-center lightgreybg">
-            	<p class="font07 margin0b weight500 textup darkgrey">1 Replies</p>
-            </div>
-          	<div class="large-2 columns content padding08v greybg text-center lightgreybg">
-              <p class="font07 margin0b weight500 textup darkgrey">15/11/2014</p>
-            </div>
-          </div>
-        </div>
-        <div class="margin125b">
-          <div class="row whitebg forumactivityborder">
-            <div class="large-8 columns content padding07v">
-              <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
-            </div>
-            <div class="large-2 columns content padding08v greybg text-center lightgreybg">
-            	<p class="font07 margin0b weight500 textup darkgrey">1 Replies</p>
-            </div>
-          	<div class="large-2 columns content padding08v greybg text-center lightgreybg">
-              <p class="font07 margin0b weight500 textup darkgrey">15/11/2014</p>
-            </div>
-          </div>
-        </div>
-        <div class="margin125b">
-          <div class="row whitebg forumactivityborder tic">
-            <div class="large-8 columns content padding07v">
-              <p class="font08 margin0b weight500">I'm having issues using our delivery system</p>
-            </div>
-            <div class="large-2 columns content padding08v greybg text-center lightgreybg">
-            	<p class="font07 margin0b weight500 textup darkgrey">1 Replies</p>
-            </div>
-          	<div class="large-2 columns content padding08v greybg text-center lightgreybg">
-              <p class="font07 margin0b weight500 textup darkgrey">15/11/2014</p>
-            </div>
-          </div>
-        </div>
-			    <% @paginated_tickets.each do |ticket| %>
-			    	<%= ticket.subject %>
-			   	<% end %>
+            <% @paginated_tickets.each do |ticket| %>
+          	  <a href="<%= ticket_path(ticket) %>">
+          	    <div class="margin125b">
+          	      <div class="row whitebg forumactivityborder">
+          	        <div class="large-8 columns content padding07v">
+          	          <p class="font08 margin0b weight500"><%= ticket.subject %></p>
+          	        </div>
+          	        <div class="large-2 columns content padding08v greybg text-center lightgreybg">
+          	       	  <p class="font07 margin0b weight500 textup darkgrey"><%= "1" + " Replies" %></p>
+          	        </div>
+          	     	  <div class="large-2 columns content padding08v greybg text-center lightgreybg">
+          	          <p class="font07 margin0b weight500 textup darkgrey"><%= ticket.created_at.to_date %></p>
+          	        </div>
+          	      </div>
+          	    </div>
+          	  </a>
+            <% end %>
+            <%= paginate (@paginated_tickets) %>
 			    </div>
 			  </div>
 			</div>
